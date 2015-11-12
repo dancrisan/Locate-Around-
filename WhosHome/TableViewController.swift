@@ -17,6 +17,10 @@ class TableViewController: PFQueryTableViewController, ESTBeaconManagerDelegate 
     var someInts = [Int]()
 //    var minor = 0
     
+    
+//    @IBOutlet var whiteBackground: UILabel!
+    
+    
     // Initialise the PFQueryTable tableview
     override init(style: UITableViewStyle, className: String!) {
         super.init(style: style, className: className)
@@ -24,6 +28,13 @@ class TableViewController: PFQueryTableViewController, ESTBeaconManagerDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.barTintColor = UIColor(hex: 0x55708d)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.tableView.backgroundColor = UIColor(hex: 0x55708d)
+        
+        self.tableView.rowHeight = 75.0
+        
+        self.navigationController?.navigationBarHidden = false
         beaconManager.delegate = self
         let proxID = NSUUID(UUIDString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")
         beaconManager.startEstimoteBeaconsDiscoveryForRegion(ESTBeaconRegion(proximityUUID: proxID!, identifier: "Vik's Beacons"))
@@ -122,7 +133,7 @@ class TableViewController: PFQueryTableViewController, ESTBeaconManagerDelegate 
     // Define the query that will provide the data for the table view
     override func queryForTable() -> PFQuery {
         var query = PFQuery(className: "ExampleData")
-//        query.orderByAscending("nameEnglish")
+        query.orderByAscending("nameEnglish")
 //        print("2");
         return query
         
@@ -133,16 +144,30 @@ class TableViewController: PFQueryTableViewController, ESTBeaconManagerDelegate 
         
         var cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! PFTableViewCell!
         if cell == nil {
-//            cell = PFTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
+            cell = PFTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
         }
         
         // Extract values from the PFObject to display in the table cell
-        if let nameEnglish = object?["nameEnglish"] as? String {
-//            cell?.textLabel?.text = nameEnglish
-        }
-        if let capital = object?["capital"] as? String {
+        let minorID = object?["minor"]
+        let majorID = object?["major"]
+//        let beaconID = minorID + "-" + majorID
+        cell?.textLabel?.text = "Beacon ID " + String(minorID!) + "-" + String(majorID!)
+        
+//        if let nameEnglish = object?["minor"] {
+//            cell?.textLabel?.text = String(nameEnglish)
+//        }
+        if let capital = object?["status"] as? String {
 //            cell?.detailTextLabel?.text = capital
+            cell?.detailTextLabel?.text = "huhuhu"
         }
+        
+//        var newLabel = UILabel(frame: CGRectMake(30.0, 30.0, 30.0, 10.0))
+//        newLabel.text = "HEELLLOOOO BOB"
+
+//        whiteBackground.addSubview(newLabel);
+//        cell.view
+//        cell.addSubview(newLabel);
+        
         print("1");
         return cell
     }
@@ -169,6 +194,46 @@ class TableViewController: PFQueryTableViewController, ESTBeaconManagerDelegate 
         // Pass the selected object to the new view controller.
 //    }
 
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+
+        cell.backgroundColor = UIColor(hex: 0x55708d)
+          //cell.backgroundColor = UIColor.whiteColor()
+
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //CODE TO BE RUN ON CELL TOUCH
+//        let alertController = UIAlertController(title: "iOScreator", message:
+//            "Hello, world!", preferredStyle: UIAlertControllerStyle.Alert)
+//        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default,handler: nil))
+
+        // Create the alert controller
+        var cell = tableView.cellForRowAtIndexPath(tableView.indexPathForSelectedRow!)
+        
+        var alertController = UIAlertController(title: cell?.textLabel?.text!, message: "Message", preferredStyle: .Alert)
+        
+        // Create the actions
+        var renameAction = UIAlertAction(title: "Rename", style: UIAlertActionStyle.Default) {
+            UIAlertAction in
+            NSLog("Rename Pressed")
+        }
+        var connectAction = UIAlertAction(title: "Connect", style: UIAlertActionStyle.Default) {
+            UIAlertAction in
+            NSLog("Connect Pressed")
+        }
+        var cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) {
+            UIAlertAction in
+            NSLog("Cancel Pressed")
+        }
+        
+        // Add the actions
+        alertController.addAction(renameAction)
+        alertController.addAction(connectAction)
+        alertController.addAction(cancelAction)
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
 
     
 }

@@ -63,6 +63,8 @@
 		BE37A0CD1BEF387A00EA0358 /* MainWindow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE37A0CB1BEF387A00EA0358 /* MainWindow.jpg */; };
 		BE37A0CF1BEF394100EA0358 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE37A0CE1BEF394100EA0358 /* TableViewController.swift */; };
 		BE37A0D11BEF3E1600EA0358 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE37A0D01BEF3E1600EA0358 /* MainWindow.swift */; };
+		BE6B083B1BF2D0780058CBF7 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B083A1BF2D0780058CBF7 /* UIColor+hex.swift */; };
+		BE6B083D1BF2D97C0058CBF7 /* cellBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE6B083C1BF2D97C0058CBF7 /* cellBackground.jpg */; };
 		BEB798661BEF34420059F3BB /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB7985F1BEF34420059F3BB /* ParseCrashReporting.framework */; };
 		BEB798671BEF34420059F3BB /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB798601BEF34420059F3BB /* ParseFacebookUtils.framework */; };
 		BEB798681BEF34420059F3BB /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB798611BEF34420059F3BB /* ParseFacebookUtilsV4.framework */; };
@@ -166,6 +168,8 @@
 		BE37A0CB1BEF387A00EA0358 /* MainWindow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = MainWindow.jpg; path = Images.xcassets/MainWindow.jpg; sourceTree = "<group>"; };
 		BE37A0CE1BEF394100EA0358 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		BE37A0D01BEF3E1600EA0358 /* MainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
+		BE6B083A1BF2D0780058CBF7 /* UIColor+hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
+		BE6B083C1BF2D97C0058CBF7 /* cellBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cellBackground.jpg; path = Images.xcassets/cellBackground.jpg; sourceTree = "<group>"; };
 		BEB7985F1BEF34420059F3BB /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
 		BEB798601BEF34420059F3BB /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		BEB798611BEF34420059F3BB /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
@@ -250,7 +254,9 @@
 				93CAA2F11A5A3AC300031E9F /* Main.storyboard */,
 				BE37A0CE1BEF394100EA0358 /* TableViewController.swift */,
 				93CAA3841A5A3FEF00031E9F /* ListViewController.swift */,
+				BE6B083A1BF2D0780058CBF7 /* UIColor+hex.swift */,
 				93CAA2F41A5A3AC300031E9F /* Images.xcassets */,
+				BE6B083C1BF2D97C0058CBF7 /* cellBackground.jpg */,
 				BE37A0CB1BEF387A00EA0358 /* MainWindow.jpg */,
 				BE37A0CA1BEF387900EA0358 /* FirstScreen.jpg */,
 				93CAA2F61A5A3AC300031E9F /* LaunchScreen.xib */,
@@ -523,6 +529,7 @@
 				BE37A0CC1BEF387A00EA0358 /* FirstScreen.jpg in Resources */,
 				93CAA3661A5A3AD500031E9F /* screen8_beacon_purple@2x.png in Resources */,
 				93CAA35D1A5A3AD500031E9F /* beaconMintSmall.png in Resources */,
+				BE6B083D1BF2D97C0058CBF7 /* cellBackground.jpg in Resources */,
 				93CAA3521A5A3AD500031E9F /* 8c_first_frame@2x.png in Resources */,
 				93CAA34B1A5A3AD500031E9F /* 8a.mov in Resources */,
 				93CAA35A1A5A3AD500031E9F /* beaconIcySmall.png in Resources */,
@@ -557,6 +564,7 @@
 				93CAA36C1A5A3AD500031E9F /* README.md in Sources */,
 				93CAA2EE1A5A3AC300031E9F /* AppDelegate.swift in Sources */,
 				BE37A0D11BEF3E1600EA0358 /* MainWindow.swift in Sources */,
+				BE6B083B1BF2D0780058CBF7 /* UIColor+hex.swift in Sources */,
 				93CAA3851A5A3FEF00031E9F /* ListViewController.swift in Sources */,
 				BE37A0CF1BEF394100EA0358 /* TableViewController.swift in Sources */,
 			);

@@ -14,11 +14,12 @@ class MainWindow: UIViewController {
 //    let beacon = ESTBeacon()
 //    let beacon_C = CLBeacon()
     @IBAction func bringListOfBeacons(sender: AnyObject) {
-        performSegueWithIdentifier("goToListOfBeacons", sender: self)
+//        performSegueWithIdentifier("goToListOfBeacons", sender: self)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.navigationController?.navigationBarHidden = true
 //        beaconManager.delegate = self
 //        let proxID = NSUUID(UUIDString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")
 //        beaconManager.startEstimoteBeaconsDiscoveryForRegion(ESTBeaconRegion(proximityUUID: proxID!, identifier: "Vik's Beacons"))
@@ -45,6 +46,12 @@ class MainWindow: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBarHidden = true
     }
     
 }
