@@ -257,12 +257,27 @@ class TableViewController: PFQueryTableViewController, ESTBeaconManagerDelegate 
             print(currentBeaconName)
             
             var messages = NSArray()
-            var fuckingObjectID = ""
+            var fuckingObjectID = "hey"
             
+            print("MAKE IT WORK!!")
+            print(self.tField.text!)
+//            var query = PFQuery(className: "ExampleData")
+//            query.whereKey("mainBeaconName", equalTo: currentBeaconName)
+//            query.findObjectsInBackgroundWithBlock { (object, error) -> Void in
+//                if error == nil {
+//                    print("CAN YOU F WORK");
+//                    print(object)
+//                }
+//                else {
+//                    print(error)
+//                }
+//                
+//            }
             var query = PFQuery(className: "ExampleData")
-            query.whereKey("nameEnglish", equalTo: "hiii")
+            query.whereKey("mainBeaconName", equalTo: "charles")
             do {
                 messages = try query.findObjects()
+                print(messages);
             } catch _ {
                 print("Error ocqurence when obtain other user list")
             }
@@ -271,9 +286,12 @@ class TableViewController: PFQueryTableViewController, ESTBeaconManagerDelegate 
                 print(message.objectId!! as String)
                 fuckingObjectID = message.objectId!! as String
             }
-//            print
-            
-            
+//            query.cancel()
+////            print
+//            
+//            print(self.tField.text)
+            print("plz...")
+            print(fuckingObjectID)
             var query2 = PFQuery(className:"ExampleData")
             query2.getObjectInBackgroundWithId(fuckingObjectID) {
                 (object, error) -> Void in
@@ -281,12 +299,13 @@ class TableViewController: PFQueryTableViewController, ESTBeaconManagerDelegate 
                     print(error)
                 } else {
                     if let object = object {
-                        object["nameEnglish"] = "crisse"
+                        object["mainBeaconName"] = self.tField.text!
                     }
                     object!.saveInBackground()
                 }
             }
             
+            currentBeaconName = self.tField.text!
             
 //            var objID = ""
 //            
@@ -405,6 +424,8 @@ class TableViewController: PFQueryTableViewController, ESTBeaconManagerDelegate 
     {
         print("generating the TextField")
         textField.placeholder = "Enter person of interest name"
+        print("I WOULD LOVE TO BE HEALTHY");
+        print(textField.text!);
         tField = textField
     }
     
