@@ -56,31 +56,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell multipleTouchEnabled="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="15" reuseIdentifier="Cell" textLabel="4LT-XA-u8P" style="IBUITableViewCellStyleDefault" id="37F-Zq-lUj" customClass="PFTableViewCell">
+                            <tableViewCell multipleTouchEnabled="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="15" reuseIdentifier="Cell" textLabel="4LT-XA-u8P" detailTextLabel="abf-nY-Azo" style="IBUITableViewCellStyleSubtitle" id="37F-Zq-lUj" customClass="PFTableViewCell">
                                 <rect key="frame" x="0.0" y="92" width="320" height="43"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="37F-Zq-lUj" id="DI5-fj-Os1">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="42"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cellBackground.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="b7r-q9-cEO">
-                                            <rect key="frame" x="8" y="8" width="304" height="26"/>
-                                        </imageView>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4LT-XA-u8P">
-                                            <rect key="frame" x="15" y="0.0" width="290" height="42"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4LT-XA-u8P">
+                                            <rect key="frame" x="15" y="4" width="32" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="abf-nY-Azo">
+                                            <rect key="frame" x="15" y="24" width="41" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="b7r-q9-cEO" firstAttribute="top" secondItem="DI5-fj-Os1" secondAttribute="topMargin" id="AIk-iI-f9q"/>
-                                        <constraint firstItem="b7r-q9-cEO" firstAttribute="leading" secondItem="DI5-fj-Os1" secondAttribute="leadingMargin" id="Iq9-hn-zxl"/>
-                                        <constraint firstItem="b7r-q9-cEO" firstAttribute="bottom" secondItem="DI5-fj-Os1" secondAttribute="bottomMargin" id="Oy4-eh-0Je"/>
-                                        <constraint firstItem="b7r-q9-cEO" firstAttribute="trailing" secondItem="DI5-fj-Os1" secondAttribute="trailingMargin" id="g0Q-0Y-feM"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -117,7 +115,6 @@
     </scenes>
     <resources>
         <image name="MainWindow.jpg" width="640" height="1136"/>
-        <image name="cellBackground.jpg" width="322" height="44"/>
     </resources>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
