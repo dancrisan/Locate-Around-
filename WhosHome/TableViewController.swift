@@ -163,7 +163,7 @@ class TableViewController: PFQueryTableViewController, ESTBeaconManagerDelegate 
         let minorID = object?["minor"]
         let majorID = object?["major"]
 //        let beaconID = minorID + "-" + majorID
-        cell?.textLabel?.text = "Beacon ID " + String(minorID!) + "-" + String(majorID!)
+        cell?.textLabel?.text = "Beacon ID : " + String(minorID!) + "-" + String(majorID!)
         mainBeaconName = (cell?.textLabel?.text)!;
         
 //        if let nameEnglish = object?["minor"] {
@@ -252,7 +252,7 @@ class TableViewController: PFQueryTableViewController, ESTBeaconManagerDelegate 
 //                }
 //            }
 
-            var currentBeaconName = ((cell?.textLabel?.text!)!).stringByReplacingOccurrencesOfString("Beacon ID ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            var currentBeaconName = ((cell?.textLabel?.text!)!).stringByReplacingOccurrencesOfString("Beacon ID : ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
             print("this is magic")
             print(currentBeaconName)
             
@@ -260,6 +260,7 @@ class TableViewController: PFQueryTableViewController, ESTBeaconManagerDelegate 
             var fuckingObjectID = "hey"
             
             print("MAKE IT WORK!!")
+            print("This is the current beacon name " + currentBeaconName)
             print(self.tField.text!)
 //            var query = PFQuery(className: "ExampleData")
 //            query.whereKey("mainBeaconName", equalTo: currentBeaconName)
@@ -274,7 +275,7 @@ class TableViewController: PFQueryTableViewController, ESTBeaconManagerDelegate 
 //                
 //            }
             var query = PFQuery(className: "ExampleData")
-            query.whereKey("mainBeaconName", equalTo: "charles")
+            query.whereKey("mainBeaconName", equalTo: currentBeaconName)
             do {
                 messages = try query.findObjects()
                 print(messages);
@@ -306,6 +307,9 @@ class TableViewController: PFQueryTableViewController, ESTBeaconManagerDelegate 
             }
             
             currentBeaconName = self.tField.text!
+            cell?.textLabel?.text = "Beacon ID : " + currentBeaconName;
+            
+            
             
 //            var objID = ""
 //            
@@ -407,6 +411,73 @@ class TableViewController: PFQueryTableViewController, ESTBeaconManagerDelegate 
         var connectAction = UIAlertAction(title: "Connect", style: UIAlertActionStyle.Default) {
             UIAlertAction in
             NSLog("Connect Pressed")
+            
+            
+            var currentBeaconName = ((cell?.textLabel?.text!)!).stringByReplacingOccurrencesOfString("Beacon ID : ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            print("OK LETS SEE WHAT THIS IS NOW!")
+            print(currentBeaconName)
+            
+            var messages = NSArray()
+            var fuckingObjectID = "hey"
+            
+            print("MAKE IT WORK!!")
+            print(self.tField.text!)
+            //            var query = PFQuery(className: "ExampleData")
+            //            query.whereKey("mainBeaconName", equalTo: currentBeaconName)
+            //            query.findObjectsInBackgroundWithBlock { (object, error) -> Void in
+            //                if error == nil {
+            //                    print("CAN YOU F WORK");
+            //                    print(object)
+            //                }
+            //                else {
+            //                    print(error)
+            //                }
+            //
+            //            }
+            var query = PFQuery(className: "ExampleData")
+            query.whereKey("mainBeaconName", equalTo: currentBeaconName)
+            do {
+                messages = try query.findObjects()
+                print(messages);
+            } catch _ {
+                print("Error ocqurence when obtain other user list")
+            }
+            
+            for message in messages {
+                print(message.objectId!! as String)
+                fuckingObjectID = message.objectId!! as String
+            }
+            //            query.cancel()
+            ////            print
+            //
+            //            print(self.tField.text)
+            print("plz...")
+            print("OKAY THIS IS THE SECOND TIME WE GET THE PROPER KEY!")
+            print(fuckingObjectID)
+            var query2 = PFQuery(className:"ExampleData")
+            query2.getObjectInBackgroundWithId(fuckingObjectID) {
+                (object, error) -> Void in
+                if error != nil {
+                    print(error)
+                } else {
+                    if let object = object {
+                        object["status"] = "Active"
+                    }
+                    object!.saveInBackground()
+                }
+            }
+            
+//            currentBeaconName = self.tField.text!
+            cell?.detailTextLabel?.text = "Active"
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
  
         

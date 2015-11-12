@@ -65,6 +65,7 @@
 		BE37A0D11BEF3E1600EA0358 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE37A0D01BEF3E1600EA0358 /* MainWindow.swift */; };
 		BE6B083B1BF2D0780058CBF7 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B083A1BF2D0780058CBF7 /* UIColor+hex.swift */; };
 		BE6B083D1BF2D97C0058CBF7 /* cellBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE6B083C1BF2D97C0058CBF7 /* cellBackground.jpg */; };
+		BE73E5191BF49D4B00DC47CD /* MentorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE73E5181BF49D4B00DC47CD /* MentorsViewController.swift */; };
 		BEB798661BEF34420059F3BB /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB7985F1BEF34420059F3BB /* ParseCrashReporting.framework */; };
 		BEB798671BEF34420059F3BB /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB798601BEF34420059F3BB /* ParseFacebookUtils.framework */; };
 		BEB798681BEF34420059F3BB /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB798611BEF34420059F3BB /* ParseFacebookUtilsV4.framework */; };
@@ -170,6 +171,7 @@
 		BE37A0D01BEF3E1600EA0358 /* MainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
 		BE6B083A1BF2D0780058CBF7 /* UIColor+hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		BE6B083C1BF2D97C0058CBF7 /* cellBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cellBackground.jpg; path = Images.xcassets/cellBackground.jpg; sourceTree = "<group>"; };
+		BE73E5181BF49D4B00DC47CD /* MentorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentorsViewController.swift; sourceTree = "<group>"; };
 		BEB7985F1BEF34420059F3BB /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
 		BEB798601BEF34420059F3BB /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		BEB798611BEF34420059F3BB /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				BE37A0CE1BEF394100EA0358 /* TableViewController.swift */,
 				93CAA3841A5A3FEF00031E9F /* ListViewController.swift */,
 				BE6B083A1BF2D0780058CBF7 /* UIColor+hex.swift */,
+				BE73E5181BF49D4B00DC47CD /* MentorsViewController.swift */,
 				93CAA2F41A5A3AC300031E9F /* Images.xcassets */,
 				BE6B083C1BF2D97C0058CBF7 /* cellBackground.jpg */,
 				BE37A0CB1BEF387A00EA0358 /* MainWindow.jpg */,
@@ -564,6 +567,7 @@
 				93CAA36C1A5A3AD500031E9F /* README.md in Sources */,
 				93CAA2EE1A5A3AC300031E9F /* AppDelegate.swift in Sources */,
 				BE37A0D11BEF3E1600EA0358 /* MainWindow.swift in Sources */,
+				BE73E5191BF49D4B00DC47CD /* MentorsViewController.swift in Sources */,
 				BE6B083B1BF2D0780058CBF7 /* UIColor+hex.swift in Sources */,
 				93CAA3851A5A3FEF00031E9F /* ListViewController.swift in Sources */,
 				BE37A0CF1BEF394100EA0358 /* TableViewController.swift in Sources */,
