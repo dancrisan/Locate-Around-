@@ -66,6 +66,12 @@
 		BE6B083B1BF2D0780058CBF7 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B083A1BF2D0780058CBF7 /* UIColor+hex.swift */; };
 		BE6B083D1BF2D97C0058CBF7 /* cellBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE6B083C1BF2D97C0058CBF7 /* cellBackground.jpg */; };
 		BE73E5191BF49D4B00DC47CD /* MentorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE73E5181BF49D4B00DC47CD /* MentorsViewController.swift */; };
+		BEB0791B1C064ED4005861CE /* empty.png in Resources */ = {isa = PBXBuildFile; fileRef = BEB0791A1C064ED4005861CE /* empty.png */; settings = {ASSET_TAGS = (); }; };
+		BEB0791F1C0A9C4E005861CE /* noBeacon.png in Resources */ = {isa = PBXBuildFile; fileRef = BEB0791E1C0A9C4E005861CE /* noBeacon.png */; settings = {ASSET_TAGS = (); }; };
+		BEB079231C0A9FB6005861CE /* mod_noBeacon.png in Resources */ = {isa = PBXBuildFile; fileRef = BEB079221C0A9FB6005861CE /* mod_noBeacon.png */; settings = {ASSET_TAGS = (); }; };
+		BEB079251C0C39EA005861CE /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB079241C0C39EA005861CE /* Toast.swift */; settings = {ASSET_TAGS = (); }; };
+		BEB079271C0C425B005861CE /* oneBeacon.png in Resources */ = {isa = PBXBuildFile; fileRef = BEB079261C0C425B005861CE /* oneBeacon.png */; settings = {ASSET_TAGS = (); }; };
+		BEB079291C0CB34B005861CE /* emptyList.png in Resources */ = {isa = PBXBuildFile; fileRef = BEB079281C0CB34B005861CE /* emptyList.png */; settings = {ASSET_TAGS = (); }; };
 		BEB798661BEF34420059F3BB /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB7985F1BEF34420059F3BB /* ParseCrashReporting.framework */; };
 		BEB798671BEF34420059F3BB /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB798601BEF34420059F3BB /* ParseFacebookUtils.framework */; };
 		BEB798681BEF34420059F3BB /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB798611BEF34420059F3BB /* ParseFacebookUtilsV4.framework */; };
@@ -172,6 +178,12 @@
 		BE6B083A1BF2D0780058CBF7 /* UIColor+hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		BE6B083C1BF2D97C0058CBF7 /* cellBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cellBackground.jpg; path = Images.xcassets/cellBackground.jpg; sourceTree = "<group>"; };
 		BE73E5181BF49D4B00DC47CD /* MentorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentorsViewController.swift; sourceTree = "<group>"; };
+		BEB0791A1C064ED4005861CE /* empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty.png; sourceTree = "<group>"; };
+		BEB0791E1C0A9C4E005861CE /* noBeacon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noBeacon.png; sourceTree = "<group>"; };
+		BEB079221C0A9FB6005861CE /* mod_noBeacon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mod_noBeacon.png; sourceTree = "<group>"; };
+		BEB079241C0C39EA005861CE /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		BEB079261C0C425B005861CE /* oneBeacon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oneBeacon.png; sourceTree = "<group>"; };
+		BEB079281C0CB34B005861CE /* emptyList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyList.png; sourceTree = "<group>"; };
 		BEB7985F1BEF34420059F3BB /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
 		BEB798601BEF34420059F3BB /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		BEB798611BEF34420059F3BB /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
@@ -256,10 +268,16 @@
 				93CAA2F11A5A3AC300031E9F /* Main.storyboard */,
 				BE37A0CE1BEF394100EA0358 /* TableViewController.swift */,
 				93CAA3841A5A3FEF00031E9F /* ListViewController.swift */,
+				BEB079241C0C39EA005861CE /* Toast.swift */,
 				BE6B083A1BF2D0780058CBF7 /* UIColor+hex.swift */,
 				BE73E5181BF49D4B00DC47CD /* MentorsViewController.swift */,
 				93CAA2F41A5A3AC300031E9F /* Images.xcassets */,
+				BEB0791A1C064ED4005861CE /* empty.png */,
 				BE6B083C1BF2D97C0058CBF7 /* cellBackground.jpg */,
+				BEB0791E1C0A9C4E005861CE /* noBeacon.png */,
+				BEB079261C0C425B005861CE /* oneBeacon.png */,
+				BEB079281C0CB34B005861CE /* emptyList.png */,
+				BEB079221C0A9FB6005861CE /* mod_noBeacon.png */,
 				BE37A0CB1BEF387A00EA0358 /* MainWindow.jpg */,
 				BE37A0CA1BEF387900EA0358 /* FirstScreen.jpg */,
 				93CAA2F61A5A3AC300031E9F /* LaunchScreen.xib */,
@@ -526,22 +544,27 @@
 				93CAA3491A5A3AD500031E9F /* 5a.mov in Resources */,
 				93CAA3551A5A3AD500031E9F /* beaconBlueberrySmall.png in Resources */,
 				93CAA3541A5A3AD500031E9F /* beaconblueberry@2x.png in Resources */,
+				BEB0791B1C064ED4005861CE /* empty.png in Resources */,
 				93CAA3611A5A3AD500031E9F /* navigation_guy@2x.png in Resources */,
 				93CAA35F1A5A3AD500031E9F /* indoor_error@2x.png in Resources */,
 				93CAA2F31A5A3AC300031E9F /* Main.storyboard in Resources */,
 				BE37A0CC1BEF387A00EA0358 /* FirstScreen.jpg in Resources */,
 				93CAA3661A5A3AD500031E9F /* screen8_beacon_purple@2x.png in Resources */,
+				BEB079291C0CB34B005861CE /* emptyList.png in Resources */,
 				93CAA35D1A5A3AD500031E9F /* beaconMintSmall.png in Resources */,
 				BE6B083D1BF2D97C0058CBF7 /* cellBackground.jpg in Resources */,
 				93CAA3521A5A3AD500031E9F /* 8c_first_frame@2x.png in Resources */,
 				93CAA34B1A5A3AD500031E9F /* 8a.mov in Resources */,
 				93CAA35A1A5A3AD500031E9F /* beaconIcySmall.png in Resources */,
+				BEB0791F1C0A9C4E005861CE /* noBeacon.png in Resources */,
 				93CAA3681A5A3AD500031E9F /* welcome@2x.png in Resources */,
 				93CAA2F81A5A3AC300031E9F /* LaunchScreen.xib in Resources */,
+				BEB079231C0A9FB6005861CE /* mod_noBeacon.png in Resources */,
 				93CAA2F51A5A3AC300031E9F /* Images.xcassets in Resources */,
 				93CAA3691A5A3AD500031E9F /* SixBeaconsView.xib in Resources */,
 				93CAA35E1A5A3AD500031E9F /* beaconMintSmall@2x.png in Resources */,
 				93CAA3561A5A3AD500031E9F /* beaconBlueberrySmall@2x.png in Resources */,
+				BEB079271C0C425B005861CE /* oneBeacon.png in Resources */,
 				93CAA3601A5A3AD500031E9F /* instructions@2x.png in Resources */,
 				93CAA3591A5A3AD500031E9F /* beaconicy@2x.png in Resources */,
 				BE37A0CD1BEF387A00EA0358 /* MainWindow.jpg in Resources */,
@@ -565,6 +588,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93CAA36C1A5A3AD500031E9F /* README.md in Sources */,
+				BEB079251C0C39EA005861CE /* Toast.swift in Sources */,
 				93CAA2EE1A5A3AC300031E9F /* AppDelegate.swift in Sources */,
 				BE37A0D11BEF3E1600EA0358 /* MainWindow.swift in Sources */,
 				BE73E5191BF49D4B00DC47CD /* MentorsViewController.swift in Sources */,

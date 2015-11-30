@@ -1,4 +1,4 @@
-//
+///
 //  MentorsViewController.swift
 //  WhosHome
 //
@@ -20,11 +20,14 @@ import UIKit
 
 class MentorsViewController: PFQueryTableViewController, ESTBeaconManagerDelegate {
     
-//    let beaconManager = ESTBeaconManager()
-//    let beacon = ESTBeacon()
+    //    let beaconManager = ESTBeaconManager()
+    //    let beacon = ESTBeacon()
     var someInts = [Int]()
     var tField: UITextField!
     var mainBeaconName = ""
+    let emptyImageView = UIImageView(frame: CGRectMake(20, 20, 250, 250));
+    let imageEmpty = UIImage(named: "emptyList.png")
+
     //    var minor = 0
     
     
@@ -45,7 +48,7 @@ class MentorsViewController: PFQueryTableViewController, ESTBeaconManagerDelegat
         self.tableView.rowHeight = 75.0
         
         self.navigationController?.navigationBarHidden = false
-
+        
         
         //        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         
@@ -66,6 +69,12 @@ class MentorsViewController: PFQueryTableViewController, ESTBeaconManagerDelegat
         //                print(error)
         //            }
         //        }
+        
+        emptyImageView.frame.origin.x = (self.view.bounds.size.width - emptyImageView.frame.size.width) / 2.0;
+        emptyImageView.frame.origin.y = (self.view.bounds.size.height - emptyImageView.frame.size.height) / 4.0;
+        //        emptyImageEmpty.frame.origin.x = (self.view.bounds.size.width - emptyImageView.frame.size.width) / 2.0 // centered left to right.
+        emptyImageView.image = imageEmpty
+        self.tableView.addSubview(emptyImageView)
     }
     
     
@@ -100,7 +109,7 @@ class MentorsViewController: PFQueryTableViewController, ESTBeaconManagerDelegat
             cell = PFTableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
         }
         
-
+        
         
         
         let activityStatus = String(object!["status"]!)
@@ -115,10 +124,10 @@ class MentorsViewController: PFQueryTableViewController, ESTBeaconManagerDelegat
             cell.backgroundView!.addSubview(imageView)
             
             // Extract values from the PFObject to display in the table cell
-//            let minorID = object?["minor"]
-//            let majorID = object?["major"]
+            //            let minorID = object?["minor"]
+            //            let majorID = object?["major"]
             //        let beaconID = minorID + "-" + majorID
-//            cell?.textLabel?.text = "Beacon ID : " + String(minorID!) + "-" + String(majorID!)
+            //            cell?.textLabel?.text = "Beacon ID : " + String(minorID!) + "-" + String(majorID!)
             cell?.textLabel?.text = String(object!["mainBeaconName"]!)
             mainBeaconName = (cell?.textLabel?.text)!;
             
@@ -141,7 +150,7 @@ class MentorsViewController: PFQueryTableViewController, ESTBeaconManagerDelegat
         
         return cell
         print("1");
-
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -173,341 +182,341 @@ class MentorsViewController: PFQueryTableViewController, ESTBeaconManagerDelegat
         
     }
     
-//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //CODE TO BE RUN ON CELL TOUCH
-        //        let alertController = UIAlertController(title: "iOScreator", message:
-        //            "Hello, world!", preferredStyle: UIAlertControllerStyle.Alert)
-        //        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default,handler: nil))
-        
-        // Create the alert controller
-//        var cell = tableView.cellForRowAtIndexPath(tableView.indexPathForSelectedRow!)
-//        
-//        var alertController = UIAlertController(title: cell?.textLabel?.text!, message: cell?.detailTextLabel?.text, preferredStyle: .Alert)
-//        
-//        var cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) {
-//            UIAlertAction in
-//            NSLog("Cancel Pressed")
-//        }
-//        
-//        var doneAction = UIAlertAction(title: "Save", style: UIAlertActionStyle.Default) {
-//            UIAlertAction in
-//            NSLog("Done Pressed")
-//            print("hiii");
-//            
-//            //            self.editValue(self.findObjID((cell?.textLabel?.text!)!, inThisColumn: "mainBeaconName", fromThisDB: "ExampleData"), fromThisColumn: "mainBeaconName", withThisText: String(self.tField))
-//            //            print(self.findObjID((cell?.textLabel?.text!)!, inThisColumn: "mainBeaconName", fromThisDB: "ExampleData"))
-//            //            var objID = "";
-//            //            var query = PFQuery(className: "ExampleData")
-//            //            query.whereKey("minor", equalTo: "234")
-//            //            query.findObjectsInBackgroundWithBlock {
-//            //                (objects: [PFObject]?, error: NSError?) -> Void in
-//            //                if (error == nil && objects != nil){
-//            //                    for object in objects! {
-//            //                        objID = object.objectId!
-//            //                        print("woooohooo")
-//            //                        print(objID);
-//            //                    }
-//            //                }
-//            //            }
-//            
-//            var currentBeaconName = ((cell?.textLabel?.text!)!).stringByReplacingOccurrencesOfString("Beacon ID : ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
-//            print("this is magic")
-//            print(currentBeaconName)
-//            
-//            var messages = NSArray()
-//            var fuckingObjectID = "hey"
-//            
-//            print("MAKE IT WORK!!")
-//            print("This is the current beacon name " + currentBeaconName)
-//            print(self.tField.text!)
-//            //            var query = PFQuery(className: "ExampleData")
-//            //            query.whereKey("mainBeaconName", equalTo: currentBeaconName)
-//            //            query.findObjectsInBackgroundWithBlock { (object, error) -> Void in
-//            //                if error == nil {
-//            //                    print("CAN YOU F WORK");
-//            //                    print(object)
-//            //                }
-//            //                else {
-//            //                    print(error)
-//            //                }
-//            //
-//            //            }
-//            var query = PFQuery(className: "ExampleData")
-//            query.whereKey("mainBeaconName", equalTo: currentBeaconName)
-//            do {
-//                messages = try query.findObjects()
-//                print(messages);
-//            } catch _ {
-//                print("Error ocqurence when obtain other user list")
-//            }
-//            
-//            for message in messages {
-//                print(message.objectId!! as String)
-//                fuckingObjectID = message.objectId!! as String
-//            }
-//            //            query.cancel()
-//            ////            print
-//            //
-//            //            print(self.tField.text)
-//            print("plz...")
-//            print(fuckingObjectID)
-//            var query2 = PFQuery(className:"ExampleData")
-//            query2.getObjectInBackgroundWithId(fuckingObjectID) {
-//                (object, error) -> Void in
-//                if error != nil {
-//                    print(error)
-//                } else {
-//                    if let object = object {
-//                        object["mainBeaconName"] = self.tField.text!
-//                    }
-//                    object!.saveInBackground()
-//                }
-//            }
-//            
-//            currentBeaconName = self.tField.text!
-//            cell?.textLabel?.text = "Beacon ID : " + currentBeaconName;
-//            
-//            
-//            
-//            //            var objID = ""
-//            //
-//            //            var query2 = PFQuery(className:"ExampleData")
-//            //            query2.whereKey("mainBeaconName", equalTo:currentBeaconName)
-//            //
-//            //
-//            //            do {
-//            //                var obj = try query2.findObjects()
-//            ////                print(obj)
-//            //
-//            //            } catch _ {
-//            //                print("Error ocqurence when obtain other user list")
-//            //            }
-//            
-//            
-//            //            do {
-//            //            var objects = try query2.findObjects()
-//            //                        } catch _ {
-//            //                            MessageAlert.errorAlert("Error ocqurence when obtain other user list")
-//            //                        }
-//            //            print(objects)
-//            //            print(query2["capital"]);
-//            //            query2.findObjects() as! [PFObject]
-//            //            query2.findObjectsInBackgroundWithBlock {
-//            //                (objects: [PFObject]?, error: NSError?) -> Void in
-//            //
-//            //
-//            //                if (error == nil && objects != nil){
-//            ////                    completion(result: objects!);
-//            //                    print(objects)
-//            //                    for object in objects! {
-//            //                        objID = object.objectId!
-//            //                        print("fuck!");
-//            //                        print(object.objectId!)
-//            //                        print("you!");
-//            //                        print(objID)
-//            //                        print("thanks!");
-//            //                    }
-//            ////                    print(objects![4])
-//            //                }
-//            //
-//            //            }
-//            
-//            //            sleep(5);
-//            //
-//            //            print("cacaolait!!!")
-//            ////            print(objID);
-//            //            var query = PFQuery(className:"ExampleData")
-//            //            query.getObjectInBackgroundWithId(objID) {
-//            ////                (gameScore: PFObject?, error: NSError?) -> Void in
-//            ////                if error == nil && gameScore != nil {
-//            ////                    print(gameScore)
-//            ////                } else {
-//            ////                    print(error)
-//            ////                }
-//            //                (rowObject: PFObject?, error: NSError?) -> Void in
-//            //                if error != nil {
-//            //                    print(error)
-//            //                } else if let rowObject = rowObject {
-//            //                    rowObject["nameLocal"] = "hihihi"
-//            //                    rowObject["capital"] = "bleh"
-//            //                    rowObject.saveInBackground()
-//            //                }
-//            //            }
-//            
-//            
-//        }
-//        
-//        
-//        // Create the actions
-//        var renameAction = UIAlertAction(title: "Rename", style: UIAlertActionStyle.Default) {
-//            UIAlertAction in
-//            NSLog("Rename Pressed")
-//            
-//            //            var alertController2 = UIAlertController(title: cell?.textLabel?.text!, message: cell?.detailTextLabel?.text, preferredStyle: .Alert)
-//            //
-//            //            let textField = (alertController2.textFields?.first?)? as UITextField
-//            
-//            //            let textField = alertController2.textFields;
-//            
-//            //            self.presentViewController(alertController2, animated: true, completion: nil)
-//            
-//            var alert = UIAlertController(title: cell?.textLabel?.text!, message: "is renamed to:", preferredStyle: UIAlertControllerStyle.Alert)
-//            
-//            alert.addTextFieldWithConfigurationHandler(self.configurationTextField)
-//            //            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler:handleCancel))
-//            
-//            
-//            
-//            alert.addAction(doneAction);
-//            alert.addAction(cancelAction);
-//            
-//            self.presentViewController(alert, animated: true, completion: {
-//                print("completion block")
-//            })
-//            
-//        }
-//        var connectAction = UIAlertAction(title: "Connect", style: UIAlertActionStyle.Default) {
-//            UIAlertAction in
-//            NSLog("Connect Pressed")
-//            
-//            
-//            var currentBeaconName = ((cell?.textLabel?.text!)!).stringByReplacingOccurrencesOfString("Beacon ID : ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
-//            print("OK LETS SEE WHAT THIS IS NOW!")
-//            print(currentBeaconName)
-//            
-//            var messages = NSArray()
-//            var fuckingObjectID = "hey"
-//            
-//            print("MAKE IT WORK!!")
-//            print(self.tField.text!)
-//            //            var query = PFQuery(className: "ExampleData")
-//            //            query.whereKey("mainBeaconName", equalTo: currentBeaconName)
-//            //            query.findObjectsInBackgroundWithBlock { (object, error) -> Void in
-//            //                if error == nil {
-//            //                    print("CAN YOU F WORK");
-//            //                    print(object)
-//            //                }
-//            //                else {
-//            //                    print(error)
-//            //                }
-//            //
-//            //            }
-//            var query = PFQuery(className: "ExampleData")
-//            query.whereKey("mainBeaconName", equalTo: currentBeaconName)
-//            do {
-//                messages = try query.findObjects()
-//                print(messages);
-//            } catch _ {
-//                print("Error ocqurence when obtain other user list")
-//            }
-//            
-//            for message in messages {
-//                print(message.objectId!! as String)
-//                fuckingObjectID = message.objectId!! as String
-//            }
-//            //            query.cancel()
-//            ////            print
-//            //
-//            //            print(self.tField.text)
-//            print("plz...")
-//            print("OKAY THIS IS THE SECOND TIME WE GET THE PROPER KEY!")
-//            print(fuckingObjectID)
-//            var query2 = PFQuery(className:"ExampleData")
-//            query2.getObjectInBackgroundWithId(fuckingObjectID) {
-//                (object, error) -> Void in
-//                if error != nil {
-//                    print(error)
-//                } else {
-//                    if let object = object {
-//                        object["status"] = "Active"
-//                    }
-//                    object!.saveInBackground()
-//                }
-//            }
-//            
-//            //            currentBeaconName = self.tField.text!
-//            cell?.detailTextLabel?.text = "Active"
-//            
-//            
-//            
-//            
-//            
-//            
-//            
-//            
-//            
-//        }
-//        
-//        
-//        // Add the actions
-//        alertController.addAction(renameAction)
-//        alertController.addAction(connectAction)
-//        alertController.addAction(cancelAction)
-//        
-//        self.presentViewController(alertController, animated: true, completion: nil)
-//    }
-//    
+    //    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    //CODE TO BE RUN ON CELL TOUCH
+    //        let alertController = UIAlertController(title: "iOScreator", message:
+    //            "Hello, world!", preferredStyle: UIAlertControllerStyle.Alert)
+    //        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default,handler: nil))
+    
+    // Create the alert controller
+    //        var cell = tableView.cellForRowAtIndexPath(tableView.indexPathForSelectedRow!)
+    //
+    //        var alertController = UIAlertController(title: cell?.textLabel?.text!, message: cell?.detailTextLabel?.text, preferredStyle: .Alert)
+    //
+    //        var cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) {
+    //            UIAlertAction in
+    //            NSLog("Cancel Pressed")
+    //        }
+    //
+    //        var doneAction = UIAlertAction(title: "Save", style: UIAlertActionStyle.Default) {
+    //            UIAlertAction in
+    //            NSLog("Done Pressed")
+    //            print("hiii");
+    //
+    //            //            self.editValue(self.findObjID((cell?.textLabel?.text!)!, inThisColumn: "mainBeaconName", fromThisDB: "ExampleData"), fromThisColumn: "mainBeaconName", withThisText: String(self.tField))
+    //            //            print(self.findObjID((cell?.textLabel?.text!)!, inThisColumn: "mainBeaconName", fromThisDB: "ExampleData"))
+    //            //            var objID = "";
+    //            //            var query = PFQuery(className: "ExampleData")
+    //            //            query.whereKey("minor", equalTo: "234")
+    //            //            query.findObjectsInBackgroundWithBlock {
+    //            //                (objects: [PFObject]?, error: NSError?) -> Void in
+    //            //                if (error == nil && objects != nil){
+    //            //                    for object in objects! {
+    //            //                        objID = object.objectId!
+    //            //                        print("woooohooo")
+    //            //                        print(objID);
+    //            //                    }
+    //            //                }
+    //            //            }
+    //
+    //            var currentBeaconName = ((cell?.textLabel?.text!)!).stringByReplacingOccurrencesOfString("Beacon ID : ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
+    //            print("this is magic")
+    //            print(currentBeaconName)
+    //
+    //            var messages = NSArray()
+    //            var fuckingObjectID = "hey"
+    //
+    //            print("MAKE IT WORK!!")
+    //            print("This is the current beacon name " + currentBeaconName)
+    //            print(self.tField.text!)
+    //            //            var query = PFQuery(className: "ExampleData")
+    //            //            query.whereKey("mainBeaconName", equalTo: currentBeaconName)
+    //            //            query.findObjectsInBackgroundWithBlock { (object, error) -> Void in
+    //            //                if error == nil {
+    //            //                    print("CAN YOU F WORK");
+    //            //                    print(object)
+    //            //                }
+    //            //                else {
+    //            //                    print(error)
+    //            //                }
+    //            //
+    //            //            }
+    //            var query = PFQuery(className: "ExampleData")
+    //            query.whereKey("mainBeaconName", equalTo: currentBeaconName)
+    //            do {
+    //                messages = try query.findObjects()
+    //                print(messages);
+    //            } catch _ {
+    //                print("Error ocqurence when obtain other user list")
+    //            }
+    //
+    //            for message in messages {
+    //                print(message.objectId!! as String)
+    //                fuckingObjectID = message.objectId!! as String
+    //            }
+    //            //            query.cancel()
+    //            ////            print
+    //            //
+    //            //            print(self.tField.text)
+    //            print("plz...")
+    //            print(fuckingObjectID)
+    //            var query2 = PFQuery(className:"ExampleData")
+    //            query2.getObjectInBackgroundWithId(fuckingObjectID) {
+    //                (object, error) -> Void in
+    //                if error != nil {
+    //                    print(error)
+    //                } else {
+    //                    if let object = object {
+    //                        object["mainBeaconName"] = self.tField.text!
+    //                    }
+    //                    object!.saveInBackground()
+    //                }
+    //            }
+    //
+    //            currentBeaconName = self.tField.text!
+    //            cell?.textLabel?.text = "Beacon ID : " + currentBeaconName;
+    //
+    //
+    //
+    //            //            var objID = ""
+    //            //
+    //            //            var query2 = PFQuery(className:"ExampleData")
+    //            //            query2.whereKey("mainBeaconName", equalTo:currentBeaconName)
+    //            //
+    //            //
+    //            //            do {
+    //            //                var obj = try query2.findObjects()
+    //            ////                print(obj)
+    //            //
+    //            //            } catch _ {
+    //            //                print("Error ocqurence when obtain other user list")
+    //            //            }
+    //
+    //
+    //            //            do {
+    //            //            var objects = try query2.findObjects()
+    //            //                        } catch _ {
+    //            //                            MessageAlert.errorAlert("Error ocqurence when obtain other user list")
+    //            //                        }
+    //            //            print(objects)
+    //            //            print(query2["capital"]);
+    //            //            query2.findObjects() as! [PFObject]
+    //            //            query2.findObjectsInBackgroundWithBlock {
+    //            //                (objects: [PFObject]?, error: NSError?) -> Void in
+    //            //
+    //            //
+    //            //                if (error == nil && objects != nil){
+    //            ////                    completion(result: objects!);
+    //            //                    print(objects)
+    //            //                    for object in objects! {
+    //            //                        objID = object.objectId!
+    //            //                        print("fuck!");
+    //            //                        print(object.objectId!)
+    //            //                        print("you!");
+    //            //                        print(objID)
+    //            //                        print("thanks!");
+    //            //                    }
+    //            ////                    print(objects![4])
+    //            //                }
+    //            //
+    //            //            }
+    //
+    //            //            sleep(5);
+    //            //
+    //            //            print("cacaolait!!!")
+    //            ////            print(objID);
+    //            //            var query = PFQuery(className:"ExampleData")
+    //            //            query.getObjectInBackgroundWithId(objID) {
+    //            ////                (gameScore: PFObject?, error: NSError?) -> Void in
+    //            ////                if error == nil && gameScore != nil {
+    //            ////                    print(gameScore)
+    //            ////                } else {
+    //            ////                    print(error)
+    //            ////                }
+    //            //                (rowObject: PFObject?, error: NSError?) -> Void in
+    //            //                if error != nil {
+    //            //                    print(error)
+    //            //                } else if let rowObject = rowObject {
+    //            //                    rowObject["nameLocal"] = "hihihi"
+    //            //                    rowObject["capital"] = "bleh"
+    //            //                    rowObject.saveInBackground()
+    //            //                }
+    //            //            }
+    //
+    //
+    //        }
+    //
+    //
+    //        // Create the actions
+    //        var renameAction = UIAlertAction(title: "Rename", style: UIAlertActionStyle.Default) {
+    //            UIAlertAction in
+    //            NSLog("Rename Pressed")
+    //
+    //            //            var alertController2 = UIAlertController(title: cell?.textLabel?.text!, message: cell?.detailTextLabel?.text, preferredStyle: .Alert)
+    //            //
+    //            //            let textField = (alertController2.textFields?.first?)? as UITextField
+    //
+    //            //            let textField = alertController2.textFields;
+    //
+    //            //            self.presentViewController(alertController2, animated: true, completion: nil)
+    //
+    //            var alert = UIAlertController(title: cell?.textLabel?.text!, message: "is renamed to:", preferredStyle: UIAlertControllerStyle.Alert)
+    //
+    //            alert.addTextFieldWithConfigurationHandler(self.configurationTextField)
+    //            //            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler:handleCancel))
+    //
+    //
+    //
+    //            alert.addAction(doneAction);
+    //            alert.addAction(cancelAction);
+    //
+    //            self.presentViewController(alert, animated: true, completion: {
+    //                print("completion block")
+    //            })
+    //
+    //        }
+    //        var connectAction = UIAlertAction(title: "Connect", style: UIAlertActionStyle.Default) {
+    //            UIAlertAction in
+    //            NSLog("Connect Pressed")
+    //
+    //
+    //            var currentBeaconName = ((cell?.textLabel?.text!)!).stringByReplacingOccurrencesOfString("Beacon ID : ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
+    //            print("OK LETS SEE WHAT THIS IS NOW!")
+    //            print(currentBeaconName)
+    //
+    //            var messages = NSArray()
+    //            var fuckingObjectID = "hey"
+    //
+    //            print("MAKE IT WORK!!")
+    //            print(self.tField.text!)
+    //            //            var query = PFQuery(className: "ExampleData")
+    //            //            query.whereKey("mainBeaconName", equalTo: currentBeaconName)
+    //            //            query.findObjectsInBackgroundWithBlock { (object, error) -> Void in
+    //            //                if error == nil {
+    //            //                    print("CAN YOU F WORK");
+    //            //                    print(object)
+    //            //                }
+    //            //                else {
+    //            //                    print(error)
+    //            //                }
+    //            //
+    //            //            }
+    //            var query = PFQuery(className: "ExampleData")
+    //            query.whereKey("mainBeaconName", equalTo: currentBeaconName)
+    //            do {
+    //                messages = try query.findObjects()
+    //                print(messages);
+    //            } catch _ {
+    //                print("Error ocqurence when obtain other user list")
+    //            }
+    //
+    //            for message in messages {
+    //                print(message.objectId!! as String)
+    //                fuckingObjectID = message.objectId!! as String
+    //            }
+    //            //            query.cancel()
+    //            ////            print
+    //            //
+    //            //            print(self.tField.text)
+    //            print("plz...")
+    //            print("OKAY THIS IS THE SECOND TIME WE GET THE PROPER KEY!")
+    //            print(fuckingObjectID)
+    //            var query2 = PFQuery(className:"ExampleData")
+    //            query2.getObjectInBackgroundWithId(fuckingObjectID) {
+    //                (object, error) -> Void in
+    //                if error != nil {
+    //                    print(error)
+    //                } else {
+    //                    if let object = object {
+    //                        object["status"] = "Active"
+    //                    }
+    //                    object!.saveInBackground()
+    //                }
+    //            }
+    //
+    //            //            currentBeaconName = self.tField.text!
+    //            cell?.detailTextLabel?.text = "Active"
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //        }
+    //
+    //
+    //        // Add the actions
+    //        alertController.addAction(renameAction)
+    //        alertController.addAction(connectAction)
+    //        alertController.addAction(cancelAction)
+    //
+    //        self.presentViewController(alertController, animated: true, completion: nil)
+    //    }
+    //
     
     
-//    func configurationTextField(textField: UITextField!)
-//    {
-//        print("generating the TextField")
-//        textField.placeholder = "Enter person of interest name"
-//        print("I WOULD LOVE TO BE HEALTHY");
-//        print(textField.text!);
-//        tField = textField
-//    }
-//    
-//    //find objectID of given element
-//    func findObjID(ofThisElement: String, inThisColumn: String, fromThisDB: String ) -> String{
-//        
-//        var objID = ""
-//        
-//        var query = PFQuery(className: fromThisDB)
-//        query.whereKey(inThisColumn, equalTo: ofThisElement)
-//        query.findObjectsInBackgroundWithBlock {
-//            (objects: [PFObject]?, error: NSError?) -> Void in
-//            if (error == nil && objects != nil){
-//                for object in objects! {
-//                    objID = object.objectId!
-//                }
-//            }
-//        }
-//        
-//        return objID;
-//    }
-//    
-//    func editValue(fromThisObjID: String, fromThisColumn: String, withThisText: String){
-//        var query = PFQuery(className:"ExampleData")
-//        query.getObjectInBackgroundWithId(fromThisObjID) {
-//            //                (gameScore: PFObject?, error: NSError?) -> Void in
-//            //                if error == nil && gameScore != nil {
-//            //                    print(gameScore)
-//            //                } else {
-//            //                    print(error)
-//            //                }
-//            (rowObject: PFObject?, error: NSError?) -> Void in
-//            if error != nil {
-//                print(error)
-//            } else if let rowObject = rowObject {
-//                rowObject[fromThisColumn] = withThisText
-//                //                rowObject["capital"] = "yolooo"
-//                rowObject.saveInBackground()
-//            }
-//        }
-//    }
-//    
-//    static func obtainFriendsList( roomData : [PFObject] ) {
-//        let query = PFQuery(className: "PeopleInRoom")
-//        query.whereKey("room", containedIn: roomData)
-//        query.includeKey("people")
-//        query.includeKey("room")
-//        do {
-//            var hello = try query.findObjects()
-//        } catch _ {
-//            print("Error ocqurence when obtain other user list")
-//        }
-//    }
+    //    func configurationTextField(textField: UITextField!)
+    //    {
+    //        print("generating the TextField")
+    //        textField.placeholder = "Enter person of interest name"
+    //        print("I WOULD LOVE TO BE HEALTHY");
+    //        print(textField.text!);
+    //        tField = textField
+    //    }
+    //
+    //    //find objectID of given element
+    //    func findObjID(ofThisElement: String, inThisColumn: String, fromThisDB: String ) -> String{
+    //
+    //        var objID = ""
+    //
+    //        var query = PFQuery(className: fromThisDB)
+    //        query.whereKey(inThisColumn, equalTo: ofThisElement)
+    //        query.findObjectsInBackgroundWithBlock {
+    //            (objects: [PFObject]?, error: NSError?) -> Void in
+    //            if (error == nil && objects != nil){
+    //                for object in objects! {
+    //                    objID = object.objectId!
+    //                }
+    //            }
+    //        }
+    //
+    //        return objID;
+    //    }
+    //
+    //    func editValue(fromThisObjID: String, fromThisColumn: String, withThisText: String){
+    //        var query = PFQuery(className:"ExampleData")
+    //        query.getObjectInBackgroundWithId(fromThisObjID) {
+    //            //                (gameScore: PFObject?, error: NSError?) -> Void in
+    //            //                if error == nil && gameScore != nil {
+    //            //                    print(gameScore)
+    //            //                } else {
+    //            //                    print(error)
+    //            //                }
+    //            (rowObject: PFObject?, error: NSError?) -> Void in
+    //            if error != nil {
+    //                print(error)
+    //            } else if let rowObject = rowObject {
+    //                rowObject[fromThisColumn] = withThisText
+    //                //                rowObject["capital"] = "yolooo"
+    //                rowObject.saveInBackground()
+    //            }
+    //        }
+    //    }
+    //    
+    //    static func obtainFriendsList( roomData : [PFObject] ) {
+    //        let query = PFQuery(className: "PeopleInRoom")
+    //        query.whereKey("room", containedIn: roomData)
+    //        query.includeKey("people")
+    //        query.includeKey("room")
+    //        do {
+    //            var hello = try query.findObjects()
+    //        } catch _ {
+    //            print("Error ocqurence when obtain other user list")
+    //        }
+    //    }
     
     
 }
