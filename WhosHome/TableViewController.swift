@@ -17,14 +17,24 @@ class TableViewController: PFQueryTableViewController, ESTBeaconManagerDelegate 
     var someInts = [Int]()
     var tField: UITextField!
     var mainBeaconName = ""
-    let emptyImageView = UIImageView(frame: CGRectMake(20, 20, 250, 250));
-    let imageEmpty = UIImage(named: "noBeacon.png")
-            var i = 0;
+    let emptyImageView = UIImageView(frame: CGRectMake(20, 20, 400, 400));
+    //let imageEmpty = UIImage(named: "noBeacon.png")
+    //let imageEmpty = UIImage(named: "emptyState1.png");
+    //let imageEmpty = UIImage(named: "emptyState2.png");
+    let imageEmpty = UIImage(named: "emptyState3.png");
+    //let imageEmpty = UIImage(named: "emptyState4.png");
+    //let imageEmpty = UIImage(named: "emptyState8.png");
+    var i = 0;
     
     let oneImageView = UIImageView(frame: CGRectMake(20, 20, 250, 250));
     let imageOne = UIImage(named: "oneBeacon.png")
     
     var numberOfCellsPresent = 0;
+    
+    // create a new style
+    var style = ToastStyle()
+    
+
     
     //var indicator = UIActivityIndicatorView(activityIndicatorStyle: .White)
     
@@ -43,6 +53,7 @@ class TableViewController: PFQueryTableViewController, ESTBeaconManagerDelegate 
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        //UIApplication.sharedApplication().statusBarStyle = .LightContent
         print("yoooo");
         //self.view.makeToast("This is a piece of toast")
         self.tableView.separatorStyle = .None
@@ -109,6 +120,10 @@ class TableViewController: PFQueryTableViewController, ESTBeaconManagerDelegate 
 //        else{
 //            emptyImageView.hidden = false
 //        }
+        
+        // this is just one of many toast style options
+        style.backgroundColor = UIColor(hex: 0x18beae)
+        
         let error: NSErrorPointer = nil
         let count = queryForTable().countObjects(error)
         print(count)
@@ -122,7 +137,7 @@ class TableViewController: PFQueryTableViewController, ESTBeaconManagerDelegate 
         else{
             oneImageView.hidden = true;
             emptyImageView.hidden = false;
-            self.view.makeToast("Grab a beacon and pull to refresh", duration: 1.5, position: CGPoint(x: self.view.bounds.size.width / 2.0, y: 560.0))
+            self.view.makeToast("Grab a beacon and pull to refresh", duration: 1.5, position: CGPoint(x: self.view.bounds.size.width / 2.0, y: 560.0), style: style)
         }
 
         print("!!!!this is on load");
@@ -135,6 +150,7 @@ class TableViewController: PFQueryTableViewController, ESTBeaconManagerDelegate 
     
     func onPullToFresh(){
         print("1111WARRAUPPP")
+        style.backgroundColor = UIColor(hex: 0x18beae)
         let error: NSErrorPointer = nil
         let count = queryForTable().countObjects(error)
         print(count)
@@ -152,7 +168,7 @@ class TableViewController: PFQueryTableViewController, ESTBeaconManagerDelegate 
         else{
             oneImageView.hidden = true;
             emptyImageView.hidden = false;
-            self.view.makeToast("Grab a beacon and pull to refresh", duration: 1.5, position: CGPoint(x: self.view.bounds.size.width / 2.0, y: 560.0))
+            self.view.makeToast("Grab a beacon and pull to refresh", duration: 1.5, position: CGPoint(x: self.view.bounds.size.width / 2.0, y: 560.0), style : style)
         }
         
         //self.tableView.makeToast("Hiiiiii");

@@ -19,6 +19,8 @@ class MainWindow: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
         //self.navigationController?.navigationBarHidden = true
 //        beaconManager.delegate = self
 //        let proxID = NSUUID(UUIDString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")
@@ -52,6 +54,7 @@ class MainWindow: UIViewController {
     {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = true
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
     }
     
 }

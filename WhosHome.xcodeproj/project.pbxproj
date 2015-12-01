@@ -72,6 +72,11 @@
 		BEB079251C0C39EA005861CE /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB079241C0C39EA005861CE /* Toast.swift */; settings = {ASSET_TAGS = (); }; };
 		BEB079271C0C425B005861CE /* oneBeacon.png in Resources */ = {isa = PBXBuildFile; fileRef = BEB079261C0C425B005861CE /* oneBeacon.png */; settings = {ASSET_TAGS = (); }; };
 		BEB079291C0CB34B005861CE /* emptyList.png in Resources */ = {isa = PBXBuildFile; fileRef = BEB079281C0CB34B005861CE /* emptyList.png */; settings = {ASSET_TAGS = (); }; };
+		BEB0792B1C0CC661005861CE /* emptyState1.png in Resources */ = {isa = PBXBuildFile; fileRef = BEB0792A1C0CC661005861CE /* emptyState1.png */; settings = {ASSET_TAGS = (); }; };
+		BEB0792D1C0CC898005861CE /* emptyState2.png in Resources */ = {isa = PBXBuildFile; fileRef = BEB0792C1C0CC898005861CE /* emptyState2.png */; settings = {ASSET_TAGS = (); }; };
+		BEB0792F1C0CCAA9005861CE /* emptyState3.png in Resources */ = {isa = PBXBuildFile; fileRef = BEB0792E1C0CCAA9005861CE /* emptyState3.png */; settings = {ASSET_TAGS = (); }; };
+		BEB079331C0CD1E0005861CE /* emptyState4.png in Resources */ = {isa = PBXBuildFile; fileRef = BEB079321C0CD1E0005861CE /* emptyState4.png */; settings = {ASSET_TAGS = (); }; };
+		BEB079351C0CD232005861CE /* emptyState8.png in Resources */ = {isa = PBXBuildFile; fileRef = BEB079341C0CD232005861CE /* emptyState8.png */; settings = {ASSET_TAGS = (); }; };
 		BEB798661BEF34420059F3BB /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB7985F1BEF34420059F3BB /* ParseCrashReporting.framework */; };
 		BEB798671BEF34420059F3BB /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB798601BEF34420059F3BB /* ParseFacebookUtils.framework */; };
 		BEB798681BEF34420059F3BB /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB798611BEF34420059F3BB /* ParseFacebookUtilsV4.framework */; };
@@ -184,6 +189,11 @@
 		BEB079241C0C39EA005861CE /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		BEB079261C0C425B005861CE /* oneBeacon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oneBeacon.png; sourceTree = "<group>"; };
 		BEB079281C0CB34B005861CE /* emptyList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyList.png; sourceTree = "<group>"; };
+		BEB0792A1C0CC661005861CE /* emptyState1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyState1.png; sourceTree = "<group>"; };
+		BEB0792C1C0CC898005861CE /* emptyState2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyState2.png; sourceTree = "<group>"; };
+		BEB0792E1C0CCAA9005861CE /* emptyState3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyState3.png; sourceTree = "<group>"; };
+		BEB079321C0CD1E0005861CE /* emptyState4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyState4.png; sourceTree = "<group>"; };
+		BEB079341C0CD232005861CE /* emptyState8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyState8.png; sourceTree = "<group>"; };
 		BEB7985F1BEF34420059F3BB /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
 		BEB798601BEF34420059F3BB /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		BEB798611BEF34420059F3BB /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
@@ -272,6 +282,11 @@
 				BE6B083A1BF2D0780058CBF7 /* UIColor+hex.swift */,
 				BE73E5181BF49D4B00DC47CD /* MentorsViewController.swift */,
 				93CAA2F41A5A3AC300031E9F /* Images.xcassets */,
+				BEB079341C0CD232005861CE /* emptyState8.png */,
+				BEB079321C0CD1E0005861CE /* emptyState4.png */,
+				BEB0792A1C0CC661005861CE /* emptyState1.png */,
+				BEB0792E1C0CCAA9005861CE /* emptyState3.png */,
+				BEB0792C1C0CC898005861CE /* emptyState2.png */,
 				BEB0791A1C064ED4005861CE /* empty.png */,
 				BE6B083C1BF2D97C0058CBF7 /* cellBackground.jpg */,
 				BEB0791E1C0A9C4E005861CE /* noBeacon.png */,
@@ -525,15 +540,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEB079331C0CD1E0005861CE /* emptyState4.png in Resources */,
 				93CAA34C1A5A3AD500031E9F /* 8b.mov in Resources */,
 				93CAA3571A5A3AD500031E9F /* beacongrey@2x.png in Resources */,
 				93CAA35B1A5A3AD500031E9F /* beaconIcySmall@2x.png in Resources */,
 				93CAA3511A5A3AD500031E9F /* 8b_first_frame@2x.png in Resources */,
 				93CAA34D1A5A3AD500031E9F /* 8c.mov in Resources */,
+				BEB0792B1C0CC661005861CE /* emptyState1.png in Resources */,
 				93CAA3501A5A3AD500031E9F /* 8a_first_frame@2x.png in Resources */,
 				93CAA3621A5A3AD500031E9F /* screen8_beacon_blue@2x.png in Resources */,
 				93CAA3671A5A3AD500031E9F /* tick@2x.png in Resources */,
 				93CAA3651A5A3AD500031E9F /* screen8_beacon_green@2x.png in Resources */,
+				BEB0792D1C0CC898005861CE /* emptyState2.png in Resources */,
 				93CAA34A1A5A3AD500031E9F /* 5b.mov in Resources */,
 				93CAA3581A5A3AD500031E9F /* beaconGreySmall@2x.png in Resources */,
 				93CAA34E1A5A3AD500031E9F /* 5a_first_frame@2x.png in Resources */,
@@ -544,11 +562,13 @@
 				93CAA3491A5A3AD500031E9F /* 5a.mov in Resources */,
 				93CAA3551A5A3AD500031E9F /* beaconBlueberrySmall.png in Resources */,
 				93CAA3541A5A3AD500031E9F /* beaconblueberry@2x.png in Resources */,
+				BEB0792F1C0CCAA9005861CE /* emptyState3.png in Resources */,
 				BEB0791B1C064ED4005861CE /* empty.png in Resources */,
 				93CAA3611A5A3AD500031E9F /* navigation_guy@2x.png in Resources */,
 				93CAA35F1A5A3AD500031E9F /* indoor_error@2x.png in Resources */,
 				93CAA2F31A5A3AC300031E9F /* Main.storyboard in Resources */,
 				BE37A0CC1BEF387A00EA0358 /* FirstScreen.jpg in Resources */,
+				BEB079351C0CD232005861CE /* emptyState8.png in Resources */,
 				93CAA3661A5A3AD500031E9F /* screen8_beacon_purple@2x.png in Resources */,
 				BEB079291C0CB34B005861CE /* emptyList.png in Resources */,
 				93CAA35D1A5A3AD500031E9F /* beaconMintSmall.png in Resources */,

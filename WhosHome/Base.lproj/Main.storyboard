@@ -53,6 +53,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eQ4-cK-q8C"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -67,9 +68,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="4Nq-22-3gf">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="PtL-A1-bG2">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="136" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PtL-A1-bG2" id="zC9-p3-5N7">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -85,6 +91,7 @@
                     <navigationItem key="navigationItem" title="Mentors List" id="sgG-3p-EgI">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="Fju-gh-WIf"/>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="63h-51-81n" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -99,9 +106,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="N9D-du-9GP">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell multipleTouchEnabled="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="15" reuseIdentifier="Cell" textLabel="4LT-XA-u8P" detailTextLabel="abf-nY-Azo" style="IBUITableViewCellStyleSubtitle" id="37F-Zq-lUj" customClass="PFTableViewCell">
-                                <rect key="frame" x="0.0" y="92" width="320" height="43"/>
+                                <rect key="frame" x="0.0" y="136" width="320" height="43"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="37F-Zq-lUj" id="DI5-fj-Os1">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -131,9 +143,10 @@
                             <outlet property="delegate" destination="LY8-bi-zIu" id="f0h-2L-s3A"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="What's around" id="Ykm-Oq-lKc">
+                    <navigationItem key="navigationItem" title="What's Around" id="Ykm-Oq-lKc">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="2pb-Gg-nNn"/>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xkG-3v-SSL" userLabel="First Responder" sceneMemberID="firstResponder"/>

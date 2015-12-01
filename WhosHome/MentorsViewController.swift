@@ -114,7 +114,7 @@ class MentorsViewController: PFQueryTableViewController, ESTBeaconManagerDelegat
         
         let activityStatus = String(object!["status"]!)
         print(activityStatus)
-        print(String(object!["proximity"]!))
+//        print(String(object!["proximity"]!))
         
         if(activityStatus == "Active"){
             var imageView = UIImageView(frame: CGRectMake(10, 10, cell.frame.width + 30, cell.frame.height + 10))
