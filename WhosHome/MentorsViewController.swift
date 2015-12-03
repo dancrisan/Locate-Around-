@@ -27,6 +27,8 @@ class MentorsViewController: PFQueryTableViewController, ESTBeaconManagerDelegat
     var mainBeaconName = ""
     let emptyImageView = UIImageView(frame: CGRectMake(20, 20, 250, 250));
     let imageEmpty = UIImage(named: "emptyList.png")
+    
+        var style = ToastStyle()
 
     //    var minor = 0
     
@@ -75,8 +77,49 @@ class MentorsViewController: PFQueryTableViewController, ESTBeaconManagerDelegat
         //        emptyImageEmpty.frame.origin.x = (self.view.bounds.size.width - emptyImageView.frame.size.width) / 2.0 // centered left to right.
         emptyImageView.image = imageEmpty
         self.tableView.addSubview(emptyImageView)
+        
+        // this is just one of many toast style options
+        style.backgroundColor = UIColor(hex: 0x18beae)
+        
+        self.refreshControl?.tintColor = UIColor.whiteColor()
+        self.refreshControl?.addTarget(self, action: "onPullToFresh", forControlEvents: UIControlEvents.ValueChanged)
+        
+        
+        let error: NSErrorPointer = nil
+        let count = queryForTable().countObjects(error)
+        print(count)
+        if (count > 0) {
+            emptyImageView.hidden = true;
+//            oneImageView.hidden = true;
+//            if( count == 1){
+//                oneImageView.hidden = false;
+//            }
+        }
+        else{
+            //oneImageView.hidden = true;
+            emptyImageView.hidden = false;
+            self.view.makeToast("Pull to refresh :)", duration: 1.5, position: CGPoint(x: self.view.bounds.size.width / 2.0, y: 560.0), style: style)
+//            self.view.makeToast("Grab a beacon and pull to refresh", duration: 1.5, position: CGPoint(x: self.view.bounds.size.width / 2.0, y: 560.0), style: style)
+        }
+        
+
+        
     }
     
+    
+    var listOfVisilbeNames = [String]();
+    
+    func onPullToFresh(){
+        self.view.makeToast("Pull to refresh :)", duration: 1.5, position: CGPoint(x: self.view.bounds.size.width / 2.0, y: 560.0), style : style)
+        listOfVisilbeNames = [String]();
+        self.tableView?.reloadData()
+        print("reload data!!!");
+        //self.tableView.removeFromSuperview();
+        emptyImageView.hidden = false;
+
+
+    }
+
     
     
     required init!(coder aDecoder: NSCoder) {
@@ -92,7 +135,7 @@ class MentorsViewController: PFQueryTableViewController, ESTBeaconManagerDelegat
     // Define the query that will provide the data for the table view
     override func queryForTable() -> PFQuery {
         var query = PFQuery(className: "ExampleData")
-        query.orderByDescending("updatedAt")
+        query.orderByAscending("status")
         //        print("2");
         return query
         
@@ -101,20 +144,41 @@ class MentorsViewController: PFQueryTableViewController, ESTBeaconManagerDelegat
     //override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell {
         
-        
+        let activityStatus = String(object!["status"]!)
         
         
         var cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! PFTableViewCell!
         if cell == nil {
-            cell = PFTableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
+            //if(activityStatus == "Active"){
+                cell = PFTableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
+            //}
         }
         
         
         
         
-        let activityStatus = String(object!["status"]!)
-        print(activityStatus)
+        
+//        print(activityStatus)
 //        print(String(object!["proximity"]!))
+        
+        
+//        if let mentorStatus = object?["status"] as? String {
+//            cell?.detailTextLabel?.text = mentorStatus
+//            cell?.detailTextLabel?.backgroundColor = UIColor.whiteColor();
+//            //if the beacon is active, display under which menetor the beacon is active
+//            if mentorStatus == "Active" {
+//                let currentBeaconName = object?["mainBeaconName"];
+//                print(currentBeaconName);
+//                print("OMFG I NEED THIS TO WORK!!!!!");
+//                cell?.textLabel?.text = String(currentBeaconName!);
+//            }
+//            else {
+//                print("let's see what's in the inactive");
+//                //object?["mainBeaconName"] = "Beacon ID : " + String(minorID!) + "-" + String(majorID!)
+//                //object!.saveInBackground()
+//            }
+//        }
+
         
         if(activityStatus == "Active"){
             var imageView = UIImageView(frame: CGRectMake(10, 10, cell.frame.width + 30, cell.frame.height + 10))
@@ -146,15 +210,47 @@ class MentorsViewController: PFQueryTableViewController, ESTBeaconManagerDelegat
             //        whiteBackground.addSubview(newLabel);
             //        cell.view
             //        cell.addSubview(newLabel);
+            if(!listOfVisilbeNames.contains(mainBeaconName)){
+                listOfVisilbeNames.append(mainBeaconName);
+            }
+        }
+        else{
+            cell.hidden = true;
         }
         
+        
+       
+        
+
+        var count = listOfVisilbeNames.count;
+        print("this is the count!!!!");
+        print(count);
+
+        if (count > 0) {
+            emptyImageView.hidden = true;
+//            oneImageView.hidden = true;
+//            if( count == 1){
+//                oneImageView.hidden = false;
+//            }
+        }
+        else{
+            //self.viewDidLoad();
+            //self.tableView.reloadData()
+            print("hiii");
+            emptyImageView.hidden = false;
+            //self.viewDidAppear(true);
+            //cell.removeFromSuperview()
+            cell.hidden = true;
+        }
+
+        
+        
         return cell
-        print("1");
         
     }
     
     override func viewDidAppear(animated: Bool) {
-        print("4");
+        print("reload!");
         //        var query = PFQuery(className:"ExampleData")
         //        query.whereKey("objectId", equalTo:PFUser.currentUser()!.objectId)
         // Refresh the table to ensure any data changes are displayed

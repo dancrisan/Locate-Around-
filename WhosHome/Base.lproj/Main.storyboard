@@ -68,14 +68,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="4Nq-22-3gf">
-                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="PtL-A1-bG2">
-                                <rect key="frame" x="0.0" y="136" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PtL-A1-bG2" id="zC9-p3-5N7">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -93,8 +88,19 @@
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="HU7-Ta-Nfd" id="nLf-Kl-jSq"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="63h-51-81n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="HU7-Ta-Nfd">
+                    <connections>
+                        <outlet property="delegate" destination="Vn1-4D-4r0" id="wOj-b7-3Qb"/>
+                        <outlet property="searchContentsController" destination="Vn1-4D-4r0" id="1HG-SH-NuC"/>
+                        <outlet property="searchResultsDataSource" destination="Vn1-4D-4r0" id="Fkc-8p-99g"/>
+                        <outlet property="searchResultsDelegate" destination="Vn1-4D-4r0" id="tR0-nR-oJJ"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1606" y="-98"/>
         </scene>
@@ -106,14 +112,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="N9D-du-9GP">
-                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
                         <prototypes>
                             <tableViewCell multipleTouchEnabled="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="15" reuseIdentifier="Cell" textLabel="4LT-XA-u8P" detailTextLabel="abf-nY-Azo" style="IBUITableViewCellStyleSubtitle" id="37F-Zq-lUj" customClass="PFTableViewCell">
-                                <rect key="frame" x="0.0" y="136" width="320" height="43"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="43"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="37F-Zq-lUj" id="DI5-fj-Os1">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
